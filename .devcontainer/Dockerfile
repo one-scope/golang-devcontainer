@@ -1,6 +1,11 @@
 ARG UBUNTU_VERSION=22.04
 FROM ubuntu:${UBUNTU_VERSION}
 
+# apt mirror server
+ARG APT_MIRROR=""
+RUN set -x \
+    && [ "${APT_MIRROR:-}" != "" ] && sed -i -r "s@http://(\\w+.)?archive\.ubuntu\.com/ubuntu/@${APT_MIRROR}@" || :
+
 # update ca-certificates
 RUN set -x \
     && apt-get update \

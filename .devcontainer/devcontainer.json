@@ -4,6 +4,7 @@
 		"dockerfile": "Dockerfile",
 		"args": {
 			"UBUNTU_VERSION": "22.04",
+			"APT_MIRROR": "http://jp.archive.ubuntu.com/ubuntu/",
 			"GO_VERSION": "1.20.5"
 		}
 	},
